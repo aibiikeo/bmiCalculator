@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bmicalculator.bmiController">
     <padding>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
     </padding>
@@ -20,30 +23,30 @@
               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
           </padding>
          <children>
-            <Label text="Your Height">
+            <Label fx:id="height" text="Your Height">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font></Label>
-            <TextField />
-            <Label text="Your Weight">
+            <TextField fx:id="heightInput" />
+            <Label fx:id="weight" text="Your Weight">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font></Label>
-            <TextField />
-            <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" text="Calculate" />
-            <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" text="Clear" />
-            <Label text="Your BMI result:">
+            <TextField fx:id="weightInput" />
+            <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#onCalculateButtonClick" text="Calculate" />
+            <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#onClearButtonClick" text="Clear" />
+            <Label fx:id="bmi" text="Your BMI result:">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font>
             </Label>
-            <Label text="Label" />
-            <Label text="Your BMI status">
+            <Label fx:id="bmiResult" text="Label" />
+            <Label fx:id="status" text="Your BMI status">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font>
             </Label>
-            <Label text="Label" />
+            <Label fx:id="statusResult" text="Label" />
          </children>
          </TilePane>
    </children>
