@@ -23,7 +23,6 @@ public class bmiCalculator {
             this.status = "Error";
     }
 
-
     public double getHeight() {
         return height;
     }
@@ -55,4 +54,5 @@ public class bmiCalculator {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }

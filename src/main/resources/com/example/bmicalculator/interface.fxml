@@ -40,13 +40,13 @@
                   <Font name="Verdana" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="bmiResult" text="Label" />
+            <Label fx:id="bmiResult" />
             <Label fx:id="status" text="Your BMI status">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="statusResult" text="Label" />
+            <Label fx:id="statusResult" />
          </children>
          </TilePane>
    </children>

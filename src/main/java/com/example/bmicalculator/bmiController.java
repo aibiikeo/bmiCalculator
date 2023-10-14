@@ -3,7 +3,6 @@ package com.example.bmicalculator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
 
 public class bmiController {
     @FXML
@@ -38,5 +37,7 @@ public class bmiController {
     protected void onClearButtonClick() {
         heightInput.setText("");
         weightInput.setText("");
+        bmiResult.setText("");
+        statusResult.setText("");
     }
 }
