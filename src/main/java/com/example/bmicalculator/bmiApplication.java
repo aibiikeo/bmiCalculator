@@ -16,13 +16,7 @@ public class bmiApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
-    static bmiCalculator bmi = new bmiCalculator();
     public static void main(String[] args) {
         launch();
-        System.out.println("Height: " + bmi.getHeight());
-        System.out.println("Weight: " + bmi.getWeight());
-        System.out.println("result: " + bmi.getResult());
-        System.out.println("status: " + bmi.getStatus());
     }
 }

@@ -30,6 +30,7 @@ public class bmiController {
         bmiCalculator.setHeight(h);
         double w = Double.parseDouble(weightInput.getText());
         bmiCalculator.setWeight(w);
+        bmiCalculator.calculate();
         bmiResult.setText(String.valueOf(bmiCalculator.getResult()));
         statusResult.setText(bmiCalculator.getStatus());
     }

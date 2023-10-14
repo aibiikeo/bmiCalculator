@@ -7,7 +7,7 @@ public class bmiCalculator {
     private String status;
 
     public void calculate(){
-        this.result = this.weight / (Math.pow(this.height,2));
+        this.result = this.weight / (Math.pow(this.height/100,2));
         if(this.result < 18.5)
             this.status = "Underweight";
         else if (this.result < 24.9 && this.result > 18.5) {
