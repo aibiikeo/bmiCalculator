@@ -12,7 +12,13 @@ public class bmiController {
     @FXML
     private Label bmi;
     @FXML
-    private Label result;
+    private Label bmiResult;
+    @FXML
+    private Label status;
+    @FXML
+    private Label statusResult;
+
+
     @FXML
     private TextField heightInput;
     @FXML

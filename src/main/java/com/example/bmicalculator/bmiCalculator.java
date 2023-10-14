@@ -6,6 +6,7 @@ public class bmiCalculator {
     private double result;
 
     public void calculate(){
+        this.result = this.weight / (this.height);
     }
 
     public double getHeight() {
