@@ -6,10 +6,17 @@ public class bmiCalculator {
     private double weight;
     private double result;
     private String status;
+    private String unit;
 
     public void calculate(){
-        double r = this.weight / (Math.pow(this.height/100,2));
-        this.result = Math.round(r * 100.0) / 100.0;
+        if (this.unit == "Metric units"){
+            double r = this.weight / (Math.pow(this.height/100,2));
+            this.result = Math.round(r * 100.0) / 100.0;
+        }
+        else if (this.unit == "English units") {
+            double r = (703 * this.weight / (Math.pow(this.height,2)));
+            this.result = Math.round(r * 100.0) / 100.0;
+        }
 
         if(this.result < 18.5)
             this.status = "Underweight";
@@ -58,4 +65,11 @@ public class bmiCalculator {
         this.status = status;
     }
 
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 }

@@ -1,14 +1,37 @@
 package com.example.bmicalculator;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import java.util.ResourceBundle;
+import java.net.URL;
+import javafx.scene.control.ChoiceBox;
 
-public class bmiController {
+public class bmiController implements Initializable{
+    @FXML
+    private Label unit;
+    @FXML
+    private ChoiceBox<String> unitChoiceBox;
+    protected String[] units = {"Metric units","English units"};
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        unitChoiceBox.getItems().addAll(units);
+        unitChoiceBox.setOnAction(this::getUnit);
+    }
+    public void getUnit(ActionEvent event){
+        String unit = unitChoiceBox.getValue();
+        bmiCalculator.setUnit(unit);
+    }
     @FXML
     private Label height;
     @FXML
+    private TextField heightInput;
+    @FXML
     private Label weight;
+    @FXML
+    private TextField weightInput;
     @FXML
     private Label bmi;
     @FXML
@@ -17,10 +40,6 @@ public class bmiController {
     private Label status;
     @FXML
     private Label statusResult;
-    @FXML
-    private TextField heightInput;
-    @FXML
-    private TextField weightInput;
 
     bmiCalculator bmiCalculator = new bmiCalculator();
 
@@ -35,10 +54,14 @@ public class bmiController {
         statusResult.setText(bmiCalculator.getStatus());
     }
     @FXML
-    protected void onClearButtonClick() {
+    protected void onClearItemClick() {
         heightInput.setText("");
         weightInput.setText("");
         bmiResult.setText("");
         statusResult.setText("");
+    }
+    @FXML
+    protected void onCloseItemClick() {
+        javafx.application.Platform.exit();
     }
 }

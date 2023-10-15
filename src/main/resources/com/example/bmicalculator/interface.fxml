@@ -2,52 +2,79 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bmicalculator.bmiController">
-    <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-    </padding>
+<VBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bmicalculator.bmiController">
     <children>
-      <Label text="BMI Calculator">
-         <font>
-            <Font name="Verdana Bold" size="20.0" />
-         </font>
-      </Label>
-      <TilePane prefHeight="157.0" prefWidth="323.0">
-          <padding>
-              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-          </padding>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onClearItemClick" text="Clear" />
+              <MenuItem mnemonicParsing="false" onAction="#onCloseItemClick" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TilePane hgap="5.0" prefHeight="38.0" prefWidth="344.0" vgap="5.0">
          <children>
-            <Label fx:id="height" text="Your Height">
+            <Label fx:id="unit" text="Choose units">
+               <font>
+                  <Font name="Verdana" size="15.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="unitChoiceBox" prefWidth="150.0" />
+            <Label fx:id="height" text="Your Height:">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font></Label>
             <TextField fx:id="heightInput" />
-            <Label fx:id="weight" text="Your Weight">
+            <Label fx:id="weight" text="Your Weight:">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font></Label>
             <TextField fx:id="weightInput" />
-            <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#onCalculateButtonClick" text="Calculate" />
-            <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#onClearButtonClick" text="Clear" />
+         </children>
+         </TilePane>
+      <Button alignment="BOTTOM_LEFT" onAction="#onCalculateButtonClick" text="Calculate">
+         <VBox.margin>
+            <Insets right="65.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Verdana" size="15.0" />
+         </font>
+      </Button>
+      <TilePane hgap="5.0" prefHeight="31.0" prefWidth="344.0" vgap="5.0">
+         <children>
             <Label fx:id="bmi" text="Your BMI result:">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font>
             </Label>
             <Label fx:id="bmiResult" />
-            <Label fx:id="status" text="Your BMI status">
+            <Label fx:id="status" text="Your BMI status:">
                <font>
                   <Font name="Verdana" size="15.0" />
                </font>
             </Label>
             <Label fx:id="statusResult" />
          </children>
-         </TilePane>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+      </TilePane>
    </children>
 </VBox>
