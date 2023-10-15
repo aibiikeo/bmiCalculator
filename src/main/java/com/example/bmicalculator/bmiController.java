@@ -25,7 +25,7 @@ public class bmiController {
     bmiCalculator bmiCalculator = new bmiCalculator();
 
     @FXML
-    protected void onCalculateButtonClick() {
+    protected void onCalculateButtonClick(){
         double h = Double.parseDouble(heightInput.getText());
         bmiCalculator.setHeight(h);
         double w = Double.parseDouble(weightInput.getText());

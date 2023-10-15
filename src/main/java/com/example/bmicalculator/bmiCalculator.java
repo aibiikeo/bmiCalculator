@@ -1,5 +1,6 @@
 package com.example.bmicalculator;
 import java.lang.Math;
+
 public class bmiCalculator {
     private double height;
     private double weight;
@@ -7,7 +8,9 @@ public class bmiCalculator {
     private String status;
 
     public void calculate(){
-        this.result = this.weight / (Math.pow(this.height/100,2));
+        double r = this.weight / (Math.pow(this.height/100,2));
+        this.result = Math.round(r * 100.0) / 100.0;
+
         if(this.result < 18.5)
             this.status = "Underweight";
         else if (this.result < 24.9 && this.result > 18.5) {
