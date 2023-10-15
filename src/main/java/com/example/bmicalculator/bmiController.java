@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import java.util.ResourceBundle;
 import java.net.URL;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class bmiController implements Initializable{
     @FXML
@@ -63,5 +65,13 @@ public class bmiController implements Initializable{
     @FXML
     protected void onCloseItemClick() {
         javafx.application.Platform.exit();
+    }
+    @FXML
+    private void onAboutItemClick() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("BMI Calculator");
+        alert.setContentText("-Choose units.\n-Enter your height and weight.\n-Click the \"Calculate\" button.");
+        alert.showAndWait();
     }
 }

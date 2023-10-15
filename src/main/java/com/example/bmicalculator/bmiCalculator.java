@@ -9,6 +9,7 @@ public class bmiCalculator {
     private String unit;
 
     public void calculate(){
+//        calculates bmi according chosen units
         if (this.unit == "Metric units"){
             double r = this.weight / (Math.pow(this.height/100,2));
             this.result = Math.round(r * 100.0) / 100.0;
@@ -17,7 +18,7 @@ public class bmiCalculator {
             double r = (703 * this.weight / (Math.pow(this.height,2)));
             this.result = Math.round(r * 100.0) / 100.0;
         }
-
+//        this part shows bmi status
         if(this.result < 18.5)
             this.status = "Underweight";
         else if (this.result < 24.9 && this.result > 18.5) {

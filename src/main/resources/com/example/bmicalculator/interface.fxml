@@ -24,7 +24,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#onAboutItemClick" text="About" />
             </items>
           </Menu>
         </menus>
@@ -51,7 +51,7 @@
          </TilePane>
       <Button alignment="BOTTOM_LEFT" onAction="#onCalculateButtonClick" text="Calculate">
          <VBox.margin>
-            <Insets right="65.0" />
+            <Insets bottom="5.0" right="65.0" top="5.0" />
          </VBox.margin>
          <font>
             <Font name="Verdana" size="15.0" />
